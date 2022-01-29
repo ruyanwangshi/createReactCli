@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "",
+    "build": "cross-env NODE_ENV=test webpack --config build/webpack.base.conf.js",
+    "build:pre": "cross-env NODE_ENV=pre webpack --config build/webpack.base.conf.js",
+    "build:prod": "cross-env NODE_ENV=prod webpack --config build/webpack.base.conf.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,17 @@
   "bugs": {
     "url": "https://github.com/ruyanwangshi/createReactCli/issues"
   },
-  "homepage": "https://github.com/ruyanwangshi/createReactCli#readme"
+  "homepage": "https://github.com/ruyanwangshi/createReactCli#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-manifest-plugin": "^4.1.1"
+  }
 }
