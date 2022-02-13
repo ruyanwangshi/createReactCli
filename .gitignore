@@ -1,26 +1,23 @@
-# Composer files
-composer.phar
-vendor/
+.DS_Store
 node_modules
-dist
+/dist
 
-# Local configs
-config/autoload/*.local.php
 
-# Binary gettext files
-*.mo
+# local env files
+.env.local
+.env.*.local
 
-# Data
-data/logs/
-data/cache/
-data/sessions/
-data/tmp/
-temp/
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-#Doctrine 2
-data/DoctrineORMModule/Proxy/
-data/DoctrineORMModule/cache/
-
-# Legacy ZF1
-demos/
-extras/documentation
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,46 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "webpacklearn",
+      "version": "1.0.0",
+      "description": "",
+      "main": "webpack.config.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": "",
+      "license": "ISC"
+    },
+    "prefix": "D:\\project\\webpacklearn"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "D:\\.pnpm-store\\v3",
+    "virtualStoreDir": "D:\\project\\webpacklearn\\node_modules\\.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "D:\\project\\webpacklearn",
+    "stage": "resolution_started"
+  },
+  "4 error pnpm": {
+    "code": "ERR_PNPM_FETCH_404",
+    "hint": "webpack-dev-serve is not in the npm registry, or you have no permission to fetch it.\n\nNo authorization header was set for the request.",
+    "request": {
+      "url": "https://registry.npm.taobao.org/webpack-dev-serve"
+    },
+    "response": {
+      "size": 0
+    },
+    "pkgName": "webpack-dev-serve",
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "GET https://registry.npm.taobao.org/webpack-dev-serve: Not Found - 404",
+      "code": "ERR_PNPM_FETCH_404",
+      "stack": "pnpm: GET https://registry.npm.taobao.org/webpack-dev-serve: Not Found - 404\n    at RetryOperation._fn (C:\\Users\\differ\\AppData\\Roaming\\nvm\\v14.18.2\\node_modules\\pnpm\\dist\\pnpm.cjs:85646:19)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)"
+    }
+  }
+}
