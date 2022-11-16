@@ -1,8 +1,8 @@
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
-const CssFilePlugin = require('mini-css-extract-plugin')
-const MiniCssPlugin = require('css-minimizer-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const CssFilePlugin = require('mini-css-extract-plugin') // 样式style单独打包成一个css文件
+const MiniCssPlugin = require('css-minimizer-webpack-plugin') // 压缩css文件
+const TerserPlugin = require('terser-webpack-plugin') // 压缩js文件
 
 module.exports = {
   entry: {
@@ -18,14 +18,16 @@ module.exports = {
     // shared: 'lodash'
     main: './src/index.js',
   },
+  // 出口
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name][contenthash].js',
     // assetModuleFilename: 'assets/imgs/[name][contenthash][ext]',
-    clean: true,
+    clean: true, // 每一次生成build的静态资源文件是否清除上一次build文件
   },
-    mode: 'production',
-  // mode: 'development',
+    // mode: 'production',
+  mode: 'development', // 打包或是启动模式
+  // 模块解析规则
   module: {
     rules: [
       {
@@ -35,7 +37,9 @@ module.exports = {
           //   publicPath: 'dist/assets/',
           filename: 'assets/imgs/[name][contenthash][ext]',
         },
+        // 解析器
         parser: {
+          // 当模块的大小小于这个尺寸的时候就会打包成base64注入到包中
           dataUrlCondition: {
             maxSize: 8 * 1024,
           },
@@ -76,6 +80,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              // 当处理@import 引入less文件的时候，加载postcss-loader, less-loader
               importLoaders: 2,
             },
           },
@@ -130,6 +135,7 @@ module.exports = {
   },
   plugins: [
     new HtmlPlugin({
+      title: 'react App',
       template: './public/index.html',
     }),
     new CssFilePlugin({
